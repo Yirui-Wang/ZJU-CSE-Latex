@@ -1,0 +1,121 @@
+\documentclass[12pt,twoside]{ctexart}
+
+%****************************************%
+%  作 者                                 %
+%****************************************%
+\newcommand{\mytitle}{面向移动机器人xxx}
+\newcommand{\myname}{王xx}
+\newcommand{\myid}{315010xxxx}
+\newcommand{\mydepartment}{控制科学与工程学院}
+\newcommand{\myclass}{自动化1504}
+\newcommand{\myteacher}{徐xx}
+\newcommand{\myemail}{xxx@xxx}
+
+%****************************************%
+%  设 置                                 %
+%****************************************%
+\usepackage{geometry}       % 设置页边距
+\geometry{top=2.54cm,bottom=2.54cm,inner=3.18cm,outer=2.54cm}
+
+\usepackage{indentfirst}    % 设置缩进
+\setlength{\parindent}{2em}
+
+\usepackage{setspace}   % 设置行间距
+\renewcommand{\baselinestretch}{1.5}
+
+\usepackage{graphicx}   % 插入图片
+
+\usepackage{listings}   % 插入代码
+\usepackage{xcolor}     % 设置代码颜色
+\lstset{
+    language=c,
+    numbers=left,
+    numberstyle=\tiny,
+    keywordstyle=\color{blue},
+    commentstyle=\color{red!50!green!50!blue!50},
+    frame=shadowbox,
+    escapeinside=@@,
+    rulesepcolor=\color{red!20!green!20!blue!20}
+}
+
+\setCJKmainfont[BoldFont={CuFangSong.ttf}]{FangSong.ttf}    % 设置中文字体
+\setmainfont{Times New Roman}                               % 设置英文字体
+\setCJKfamilyfont{Song}{Song.ttc}
+\newcommand{\myheaderfont}{\CJKfamily{Song}\fontsize{9pt}{\baselineskip}}
+\newcommand{\mysectionfont}{\fontsize{16pt}{\baselineskip}}
+\newcommand{\mysubsectionfont}{\fontsize{15pt}{\baselineskip}}
+\newcommand{\mysubsubsectionfont}{\fontsize{14pt}{\baselineskip}}
+\newcommand{\mytocfont}{\fontsize{11pt}{\baselineskip}}
+\newcommand{\mycoverfontb}{\fontsize{16pt}{\baselineskip}}
+\newcommand{\mycoverfontc}{\fontsize{10.5pt}{\baselineskip}}
+
+\usepackage{titlesec}   % 定制多级标题
+\setcounter{secnumdepth}{4}
+\titleformat{\section}{\centering\mysectionfont\bfseries}{\chinese{section}、}{0em}{}
+\titleformat{\subsection}{\mysubsectionfont\bfseries}{\arabic{subsection}}{0.5em}{}
+\titleformat{\subsubsection}{\mysubsubsectionfont\bfseries}{\arabic{subsection}.\arabic{subsubsection}}{0.5em}{}
+\titleformat{\paragraph}{\mysubsubsectionfont\bfseries}{\arabic{subsection}.\arabic{subsubsection}.\arabic{paragraph}}{0.5em}{}
+\newcommand{\subsubsubsection}{\paragraph}
+
+\usepackage{titletoc}   % 定制目录
+\usepackage[CJKbookmarks]{hyperref}
+\renewcommand{\thesection}{\chinese{section}、}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{subsection}.\arabic{subsubsection}}
+\renewcommand{\contentsname}{目 \quad 录}
+\titlecontents{section}[2em]{\bf}{\contentslabel{2em}}{}{\titlerule*[0.25pc]{$.$}\contentspage}
+\titlecontents{subsection}[2em]{\mytocfont}{\contentslabel{1em}}{}{\titlerule*[0.25pc]{$.$}\contentspage}
+\titlecontents{subsubsection}[3.8em]{\mytocfont}{\contentslabel{1.8em}}{}{\titlerule*[0.25pc]{$.$}\contentspage}
+
+\usepackage{fancyhdr}   % 设置页眉页脚
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[RO]{\myheaderfont \mytitle}    %奇数页眉的右边
+\fancyhead[LE]{\myheaderfont 浙江大学本科生毕业论文}
+\fancyfoot[RO,LE]{\myheaderfont \thepage}
+\fancyfoot[C]{}
+
+\begin{document}
+
+%****************************************%
+%  封 面                                 %
+%****************************************%
+\newgeometry{top=1in,bottom=1in,inner=1.25in,outer=1.25in}
+\pagestyle{empty}
+
+\begin{center}
+\includegraphics[width=4.25in]{images/zju.jpg}\\
+\vspace{1cm}
+\includegraphics[height=1.6in]{images/cover.jpg}\\
+\vspace{0.5cm}
+\includegraphics[width=1.42in]{images/qsy.jpg}\\
+\vspace{3cm}
+\mycoverfontb{\bf{\makebox[4cm]{姓名与学号}\underline{\makebox[7cm]{\myname，\myid}}}}\\
+\mycoverfontc{\makebox[12cm]{}}\\
+\mycoverfontb{\bf{\makebox[4cm]{指导教师}\underline{\makebox[7cm]{\myteacher}}}}\\
+\mycoverfontc{\makebox[12cm]{}}\\
+\mycoverfontb{\bf{\makebox[4cm]{年纪与专业}\underline{\makebox[7cm]{\myclass}}}}\\
+\mycoverfontc{\makebox[12cm]{}}\\
+\mycoverfontb{\bf{\makebox[4cm]{所在学院}\underline{\makebox[7cm]{\mydepartment}}}}\\
+\mycoverfontc{\makebox[12cm]{}}\\
+\end{center}
+
+%****************************************%
+%  目 录                                 %
+%****************************************%
+\newpage \setcounter{page}{1}
+\pagenumbering{Roman}
+\restoregeometry
+\pagestyle{fancy}
+\tableofcontents
+
+%****************************************%
+%  正 文                                 %
+%****************************************%
+\newpage \setcounter{page}{1}
+\pagenumbering{arabic}
+
+\input{一、文献综述.tex}
+\input{二、开题报告.tex}
+
+\end{document}
