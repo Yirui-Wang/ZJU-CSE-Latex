@@ -1,0 +1,39 @@
+%****************************************%
+%  文 献 综 述                           %
+%****************************************%
+\section{文献综述}
+\subsection{背景介绍}
+通过各种各样的传感器来决定环境中人流的数量是一个重要的问题，它有非常多有价值的应用场景。
+
+\subsection{国内外研究现状}
+实时人流计数系统一般可以分为三类。
+
+\subsubsection{传统传感器计数系统}
+Florian Wahl，Marija Milenkovic和Oliver Amft在2012年提出的基于分布式被动红外传感器(PIR)的人流检测算法\cite{Wahl2012ADP}是一种经典的算法。
+
+\subsubsection{视觉传感器计数系统}
+由于传统传感器系统应用的局限性，随着图像处理技术的发展与计算机计算能力的提高，更多的基于视频图像数据的人流计数系统涌现了出来。
+
+2013年，Zheng Ma和Antoni B. Chan将利用视频数据进行人流计数的方法分为了两大类\cite{Ma2013CrossingTL}：
+\begin{enumerate}
+    \item 感兴趣线(Line of interest, LOI)人流计数。这种方法对通过某条线或门的人流进行计数；
+    \item 感兴趣区域(Region of interest, ROI)人流计数。这种方法估计某一时刻某区域的人群综述。
+\end{enumerate}
+
+\subsubsubsection{LOI人流计数方法}
+Rakesh Kumar, Tapesh Parashar和Gopal Verma在2012年提出了一种基于背景建模和减除的方法\cite{Kumar2012BackgroundMA}。
+
+\subsubsubsection{ROI人流计数方法}
+
+\subparagraph{基于特征和像素回归的方法}
+2009年，David Ryan和Simon Denman等人使用局部特征来计算每一个前景的Blob分割的人数，对其求和得到整个人群的数量\cite{Ryan2009CrowdCU}。
+
+\subsubsection{多传感器融合计数系统}
+目前，人流计数领域的多传感器融合一般包含摄像头与红外传感器。
+
+\subsubsection{总结}
+从目前人流计数领域的发展现状来看，基于传统的传感器组合的人流计数系统的发展较为完备，在特定场合已经有了广泛的应用并为管理者与决策者们带来了许多便利。
+
+\addcontentsline{toc}{subsection}{参考文献}
+\bibliographystyle{unsrt}
+\bibliography{refs}

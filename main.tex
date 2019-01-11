@@ -3,25 +3,31 @@
 %****************************************%
 %  作 者                                 %
 %****************************************%
-\newcommand{\mytitle}{面向移动机器人xxx}
+\newcommand{\mytitle}{面xxxx}
 \newcommand{\myname}{王xx}
 \newcommand{\myid}{315010xxxx}
 \newcommand{\mydepartment}{控制科学与工程学院}
-\newcommand{\myclass}{自动化1504}
+\newcommand{\myclass}{自动化150x}
 \newcommand{\myteacher}{徐xx}
-\newcommand{\myemail}{xxx@xxx}
+\newcommand{\myemail}{xxxx}
 
 %****************************************%
 %  设 置                                 %
 %****************************************%
 \usepackage{geometry}       % 设置页边距
 \geometry{top=2.54cm,bottom=2.54cm,inner=3.18cm,outer=2.54cm}
-
 \usepackage{indentfirst}    % 设置缩进
 \setlength{\parindent}{2em}
-
-\usepackage{setspace}   % 设置行间距
+\usepackage{enumitem}       % 设置enumerate间距
+\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0em}
+\setitemize[1]{parsep=\parskip,itemsep=0pt,topsep=0pt,partopsep=0pt}
+\usepackage{setspace}       % 设置行间距
 \renewcommand{\baselinestretch}{1.5}
+\setlength{\parskip}{0em}   % 设置段间距
+
+\usepackage{array}      % 表格设置
+\usepackage{makecell}
+\usepackage[font=bf]{caption}
 
 \usepackage{graphicx}   % 插入图片
 
@@ -48,6 +54,7 @@
 \newcommand{\mytocfont}{\fontsize{11pt}{\baselineskip}}
 \newcommand{\mycoverfontb}{\fontsize{16pt}{\baselineskip}}
 \newcommand{\mycoverfontc}{\fontsize{10.5pt}{\baselineskip}}
+\newcommand{\mytablefont}{\fontsize{10.5pt}{\baselineskip}}
 
 \usepackage{titlesec}   % 定制多级标题
 \setcounter{secnumdepth}{4}
@@ -56,6 +63,11 @@
 \titleformat{\subsubsection}{\mysubsubsectionfont\bfseries}{\arabic{subsection}.\arabic{subsubsection}}{0.5em}{}
 \titleformat{\paragraph}{\mysubsubsectionfont\bfseries}{\arabic{subsection}.\arabic{subsubsection}.\arabic{paragraph}}{0.5em}{}
 \newcommand{\subsubsubsection}{\paragraph}
+\titlespacing*{\section}{0pt}{3.5ex}{2.3ex}
+\titlespacing*{\subsection}{0pt}{3.25ex}{1.5ex}
+\titlespacing*{\subsubsection}{0pt}{3.25ex}{1.5ex}
+\titlespacing*{\paragraph}{0pt}{2ex}{1em}
+\titlespacing*{\subparagraph}{\parindent}{0.5em}{1em}
 
 \usepackage{titletoc}   % 定制目录
 \usepackage[CJKbookmarks]{hyperref}
@@ -75,8 +87,12 @@
 \fancyfoot[RO,LE]{\myheaderfont \thepage}
 \fancyfoot[C]{}
 
-\begin{document}
+\usepackage{natbib}     % 定制参考文献
+\makeatletter
+\renewcommand\bibsection{\subsection*{\refname}}
+\makeatother
 
+\begin{document}
 %****************************************%
 %  封 面                                 %
 %****************************************%
@@ -84,19 +100,19 @@
 \pagestyle{empty}
 
 \begin{center}
-\includegraphics[width=4.25in]{images/zju.jpg}\\
+\includegraphics[width=5in]{images/zju.jpg}\\
 \vspace{1cm}
 \includegraphics[height=1.6in]{images/cover.jpg}\\
-\vspace{0.5cm}
+\vspace{0.8cm}
 \includegraphics[width=1.42in]{images/qsy.jpg}\\
-\vspace{3cm}
-\mycoverfontb{\bf{\makebox[4cm]{姓名与学号}\underline{\makebox[7cm]{\myname，\myid}}}}\\
+\vspace{2.5cm}
+\mycoverfontb{\bf{\makebox[3.2cm][l]{姓名与学号}\underline{\makebox[7cm]{\myname，\myid}}}}\\
 \mycoverfontc{\makebox[12cm]{}}\\
-\mycoverfontb{\bf{\makebox[4cm]{指导教师}\underline{\makebox[7cm]{\myteacher}}}}\\
+\mycoverfontb{\bf{\makebox[3.2cm][l]{指导教师}\underline{\makebox[7cm]{\myteacher}}}}\\
 \mycoverfontc{\makebox[12cm]{}}\\
-\mycoverfontb{\bf{\makebox[4cm]{年纪与专业}\underline{\makebox[7cm]{\myclass}}}}\\
+\mycoverfontb{\bf{\makebox[3.2cm][l]{年纪与专业}\underline{\makebox[7cm]{\myclass}}}}\\
 \mycoverfontc{\makebox[12cm]{}}\\
-\mycoverfontb{\bf{\makebox[4cm]{所在学院}\underline{\makebox[7cm]{\mydepartment}}}}\\
+\mycoverfontb{\bf{\makebox[3.2cm][l]{所在学院}\underline{\makebox[7cm]{\mydepartment}}}}\\
 \mycoverfontc{\makebox[12cm]{}}\\
 \end{center}
 
@@ -115,7 +131,9 @@
 \newpage \setcounter{page}{1}
 \pagenumbering{arabic}
 
-\input{一、文献综述.tex}
-\input{二、开题报告.tex}
+\input{1文献综述.tex}
+\input{2开题报告.tex}
+\input{3外文翻译.tex}
+% \input{2. 开题报告.tex}
 
 \end{document}
